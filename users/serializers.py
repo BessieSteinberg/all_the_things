@@ -10,6 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['display_name', 'username', 'email', 'password']
 
     def create(self, validated_data):
+        import pudb; pudb.set_trace()
         user = User.objects.create_user(
             display_name=validated_data['display_name'],
             username=validated_data['username'],
