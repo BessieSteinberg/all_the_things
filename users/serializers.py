@@ -10,7 +10,8 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['display_name', 'username', 'email', 'password']
 
     def create(self, validated_data):
-        import pudb; pudb.set_trace()
+        # TODO: error if not all fields are filled
+        # TODO: error if username is already in use
         user = User.objects.create_user(
             display_name=validated_data['display_name'],
             username=validated_data['username'],
